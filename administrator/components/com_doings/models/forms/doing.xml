@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="details"
+              addfieldpath="/administrator/components/com_doings/models/fields">
+
+        <field name="id"
+               type="text"
+               default="0"
+               readonly="true"
+               class="readonly"
+               label="JGLOBAL_FIELD_ID_LABEL"
+               description="JGLOBAL_FIELD_ID_DESC"
+        />
+
+        <field name="name"
+               type="text"
+               class="inputbox"
+               size="40"
+               label="JGLOBAL_NAME"
+               description="JFIELD_NAME_DESC"
+               required="true"
+        />
+
+        <field name="alias"
+               type="text"
+               class="inputbox"
+               size="40"
+               label="JFIELD_ALIAS_LABEL"
+               description="JFIELD_ALIAS_DESC"
+        />
+
+        <field name="icon"
+               type="media"
+               directory="eventos"
+               label="JFIELD_ICON_LABEL"
+        />
+
+        <field name="image"
+               type="media"
+               directory="eventos"
+               label="JFIELD_IMAGE_LABEL"
+        />
+
+        <field name="date_start"
+               type="text"
+               size="20"
+               label="JFIELD_DATE_START_LABEL"
+               description="JFIELD_DATE_START_DESC"
+               maxlength="10"
+               required="true"
+        />
+
+        <field name="hour_start"
+               type="text"
+               class="inputbox"
+               size="40"
+               label="JFIELD_HOUR_START_LABEL"
+               description="JFIELD_HOUR_START_DESC"
+        />
+
+        <field name="date_end"
+               type="text"
+               size="20"
+               label="JFIELD_DATE_END_LABEL"
+               description="JFIELD_DATE_END_DESC"
+               maxlength="10"
+        />
+
+        <field name="hour_end"
+               type="text"
+               class="inputbox"
+               size="40"
+               label="JFIELD_HOUR_END_LABEL"
+               description="JFIELD_HOUR_END_DESC"
+        />
+
+        <field name="local"
+               type="text"
+               class="inputbox"
+               size="40"
+               label="JFIELD_LOCAL_LABEL"
+               description="JFIELD_LOCAL_DESC"
+        />
+
+        <field name="subscription"
+               type="radio"
+               default="0"
+               label="JFIELD_SUBSCRIPTION_LABEL"
+               description="JFIELD_SUBSCRIPTION_DESC"
+               class="btn-group btn-group-yesno"
+        >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+
+        <field name="address"
+               type="text"
+               class="inputbox"
+               size="40"
+               label="JFIELD_ADDRESS_LABEL"
+               description="JFIELD_ADDRESS_DESC"
+        />
+
+        <field
+                name="id_city"
+                type="sql"
+                default="1606"
+                label="JFIELD_CITY_LABEL"
+                query="SELECT id, concat(description,' - ',uf) AS city FROM #__cities ORDER BY description"
+                key_field="id"
+                value_field="city"
+                required="true"
+        >
+        </field>
+
+        <field name="contact"
+               type="text"
+               class="inputbox"
+               size="40"
+               label="JFIELD_CONTACT_LABEL"
+               description="JFIELD_CONTACT_DESC"
+        />
+
+        <field name="description"
+               type="editor"
+               class="inputbox"
+               size="40"
+               label="JFIELD_DESCRIPTION_LABEL"
+               description="JFIELD_DESCRIPTION_DESC"
+        />
+
+    </fieldset>
+
+    <fieldset name="publish">
+
+        <field name="published"
+               type="list"
+               label="JSTATUS"
+               class="inputbox"
+               size="1"
+               default="1"
+        >
+            <option value="1">JPUBLISHED</option>
+
+            <option value="0">JUNPUBLISHED</option>
+
+            <option value="2">JARCHIVED</option>
+
+            <option value="-2">JTRASHED</option>
+
+        </field>
+
+        <field name="created"
+               type="calendar"
+               label="JGLOBAL_FIELD_CREATED_LABEL"
+               description="JGLOBAL_FIELD_CREATED_DESC"
+               class="inputbox"
+               size="22"
+               format="%Y-%m-%d %H:%M:%S"
+               filter="user_utc"
+        />
+
+        <field name="created_by"
+               type="user"
+               label="JGLOBAL_FIELD_CREATED_BY_LABEL"
+               description="JGLOBAL_FIELD_CREATED_BY_Desc"
+        />
+
+        <field name="modified"
+               type="calendar"
+               class="readonly"
+               label="JGLOBAL_FIELD_MODIFIED_LABEL"
+               description="COM_WEBLINKS_FIELD_MODIFIED_DESC"
+               size="22"
+               readonly="true"
+               format="%Y-%m-%d %H:%M:%S"
+               filter="user_utc"
+        />
+
+        <field name="modified_by"
+               type="user"
+               label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+               class="readonly"
+               readonly="true"
+               filter="unset"
+        />
+
+        <field name="checked_out"
+               type="hidden"
+               filter="unset"
+        />
+
+        <field name="checked_out_time"
+               type="hidden"
+               filter="unset"
+        />
+
+        <field name="publish_up"
+               type="calendar"
+               label="JGLOBAL_FIELD_PUBLISH_UP_LABEL"
+               description="JGLOBAL_FIELD_PUBLISH_UP_DESC"
+               class="inputbox"
+               format="%Y-%m-%d %H:%M:%S"
+               size="22"
+               filter="user_utc"
+        />
+
+        <field name="publish_down"
+               type="calendar"
+               label="JGLOBAL_FIELD_PUBLISH_DOWN_LABEL"
+               description="JGLOBAL_FIELD_PUBLISH_DOWN_DESC"
+               class="inputbox"
+               format="%Y-%m-%d %H:%M:%S"
+               size="22"
+               filter="user_utc"
+        />
+
+    </fieldset>
+</form>

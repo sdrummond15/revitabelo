@@ -1,0 +1,3 @@
+<IfModule mime_module>
+ addhandler application/x-httpd-ea-php56 .php
+ </IfModule>
